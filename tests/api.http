@@ -1,0 +1,39 @@
+### 健康檢查
+GET http://localhost:3001/health
+
+### 建立報名（成功案例）
+POST http://localhost:3001/api/signup
+Content-Type: application/json
+
+{
+  "name": "REST Client",
+  "email": "rest@example.com",
+  "phone": "0912345678",
+  "password": "restrest",
+  "confirmPassword": "restrest",
+  "interests": ["後端"],
+  "terms": true
+}
+
+### 建立報名（失敗案例：手機錯誤）
+POST http://localhost:3001/api/signup
+Content-Type: application/json
+
+{
+  "name": "Wrong Phone",
+  "email": "wrong@example.com",
+  "phone": "12345",
+  "password": "abcdefghi",
+  "confirmPassword": "abcdefghi",
+  "interests": ["前端"],
+  "terms": true
+}
+
+### 查看清單
+GET http://localhost:3001/api/signup
+
+### 依 ID 查看單一報名（請自行替換 :id）
+GET http://localhost:3001/api/signup/:id
+
+### 刪除報名（請自行替換 :id）
+DELETE http://localhost:3001/api/signup/:id
